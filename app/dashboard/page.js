@@ -3,6 +3,8 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import AuthStatus from "@/components/AuthStatus";
 import Jobs from "@/components/Jobs";
+import Link from 'next/link';
+import Form from "@/components/Form";
 
 export default async function Dashboard() {
     const session = await getServerSession(authOptions);
@@ -22,6 +24,13 @@ export default async function Dashboard() {
                     Welcome, {session.user.name}!
                 </p>
                 <Jobs />
+                <Form />
+                <Link
+                    href="/resume"
+                    className="p-4 border-solid border-1 border-gray-700 rounded-md hover:bg-amber-300"
+                >
+                    Work on Resume
+                </Link>
             </main>
         </div>
     );
