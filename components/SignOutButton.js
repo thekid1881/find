@@ -7,7 +7,7 @@ export default function SignOutButton() {
     return (
         <button
             onClick={() => signOut({ callbackUrl: '/' })}
-            className="flex flex-row text-md font-bold mt-12 border-solid border-1 border-gray-700 p-2 rounded-md"
+            className="flex flex-row text-md font-bold mt-6 border-solid border-1 border-gray-700 p-2 rounded-md"
         >
             <FaGooglePlus 
                 className="m-2"
