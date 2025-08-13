@@ -1,16 +1,19 @@
 'use client';
 
 import { useSession, signOut } from 'next-auth/react';
+import SignOutButton from './SignOutButton';
 
 export default function AuthStatus() {
     const { data: session } = useSession();
 
     if (session) {
         return (
-            <>
-                <p>Signed in as {session.user.email}</p>
-                <button onClick={() => signOut()}>Sign Out</button>
-            </>
+            <div className='static'>
+                <div className='absolute top-3 left-3'>
+                    <p>Signed in as {session.user.email}</p>
+                    <SignOutButton />
+                </div>
+            </div>
         );
     }
 
